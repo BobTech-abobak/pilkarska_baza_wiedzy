@@ -397,7 +397,7 @@
 					$main.hide();
 					$main_articles.hide();
 
-				// Initial article.
+					location.hash = '';
 					if (location.hash != ''
 					&&	location.hash != '#')
 						$window.on('load', function() {
