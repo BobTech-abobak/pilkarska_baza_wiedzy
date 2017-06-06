@@ -41,7 +41,9 @@ var AFD = {
                 $("table#"+name+" td").on('click', function(){
                     historyActions.addHistoryAction(
                         new historyObject(
-                            $(this).find('~ input').val(), Date.now()
+                            $(this).find('~ input').val(),
+                            Date.now(),
+                            $(this).find('~ input').data('name')
                         )
                     );
                     afd.getStatistics(name);
@@ -72,26 +74,32 @@ var AFD = {
             content += '<td>'+item.caption+'</td>';
             content += '<td>'+item.numberOfTeams+'</td>';
             content += '<td>'+ item.lastUpdated.substr(0, 10)+'</td>';
-            content += '<input type="hidden" value="' + item['_links']['self']['href'] + '">';
+            content += '<input type="hidden" value="' + item['_links']['self']['href'] + '" data-name="'+item.caption+'">';
             content += '</tr>';
         });
         content += '</table>';
-        $("#stats div:eq(0)").empty().append(content);
+
+        $("#main").hide();
+        $("#stats").empty().append(content).show();
     },
 
     showCompetitionInfo: function(name, data) {
         var content = '<h3>' + data.caption + '</h3>';
         if (data.currentMatchday == data.numberOfMatchdays) {
-            content += '<button class="tableType" id="table" data-url="' + data._links.leagueTable.href + '">Tabela</button>';
+            content += '<button class="tableType" id="table" data-url="' + data._links.leagueTable.href + '" data-name="'+ data.caption +' - Tabela">Tabela</button>';
         }
-        content += '<button class="tableType" id="fixtures" data-url="' + data._links.fixtures.href + '">Mecze</button>';
-        content += '<button class="tableType" id="teams" data-url="' + data._links.teams.href + '">Drużyny</button>';
-        $("#stats div:eq(0)").empty().append(content);
+        content += '<button class="tableType" id="fixtures" data-url="' + data._links.fixtures.href + '" data-name="'+ data.caption +' - Mecze">Mecze</button>';
+        content += '<button class="tableType" id="teams" data-url="' + data._links.teams.href + '" data-name="'+ data.caption +' - Drużyny">Drużyny</button>';
+
+        $("#main").hide();
+        $("#stats").empty().append(content).show();
 
         $("#table").on("click", function(){
             historyActions.addHistoryAction(
                 new historyObject(
-                    $(this).data('url'), Date.now()
+                    $(this).data('url'),
+                    Date.now(),
+                    $(this).data('name')
                 )
             );
             AFD.getStatistics('competitions');
@@ -100,7 +108,9 @@ var AFD = {
         $("#fixtures").on("click", function(){
             historyActions.addHistoryAction(
                 new historyObject(
-                    $(this).data('url'), Date.now()
+                    $(this).data('url'),
+                    Date.now(),
+                    $(this).data('name')
                 )
             );
             AFD.getStatistics('fixtures');
@@ -144,7 +154,9 @@ var AFD = {
             content += '</tr>';
         });
         content += '</table>';
-        $("#stats div:eq(0)").empty().append(content);
+
+        $("#main").hide();
+        $("#stats").empty().append(content).show();
 
         $(".tableType").on('click', function() {
             $(".tableType").removeClass('tableActive')
@@ -204,7 +216,9 @@ var AFD = {
             content += '</tr>';
         });
         content += '</table>';
-        $("#stats div:eq(0)").empty().append(content);
+
+        $("#main").hide();
+        $("#stats").empty().append(content).show();
 
         $(".tableType").on('click', function() {
             $(".tableType").removeClass('tableActive')
