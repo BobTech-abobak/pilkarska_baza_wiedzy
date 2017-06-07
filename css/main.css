@@ -6,32 +6,45 @@
     width: 100%;
 }
 
-#stats div table tbody tr:nth-child(1) {
-    background-color: inherit;
-    border: 0px;
-    border-bottom: solid 2px #FFFFFF;
+#stats .container .row:nth-of-type(n+2) {
+    border: solid 1px black;
+    border-top: 0px;
+}
+
+#stats .container .row:nth-of-type(n+2) div {
+    padding: 1%;
+}
+
+#stats .container .row:nth-child(even) {
+    background-color: #EEEEEE;
+}
+
+#stats .container .row:first-child {
+    border: solid black 1px;
+}
+
+#stats .container .row:first-child div {
+    background-color: #DDDDDD;
     font-size: 1.2em;
+    font-weight: bolder;
+    padding: 1%;
+    text-align: center;
 }
 
-#stats div table tbody tr:hover:nth-child(n+2) {
-    background-color: #AAAAAA;
-    color:#000000;
+#stats .container .row:nth-of-type(n+2):hover {
+    background-color: #444444;
     cursor: pointer;
+    color:#EEEEEE;
 }
 
-.tableType {
-    font-size: 0.6em;
-    letter-spacing: 0.1rem;
-    width: 31%;
-    padding: 0px;
-    margin: 1%;
+.fixtures {
+    margin-bottom: 20px;
 }
 
-.tableActive {
-    background-color: rgba(255, 255, 255, 0.4);
-    font-weight: bold;
+.standing {
+    margin-top: 20px;
 }
 
-#leagueTable .home, #leagueTable .away {
+.home, .away {
     display: none;
 }
