@@ -6,24 +6,24 @@
     width: 100%;
 }
 
-#stats .container .row:nth-of-type(n+2) {
+.stats_container .row:nth-of-type(n+2) {
     border: solid 1px black;
     border-top: 0px;
 }
 
-#stats .container .row:nth-of-type(n+2) div {
+.stats_container .row:nth-of-type(n+2) div {
     padding: 1%;
 }
 
-#stats .container .row:nth-child(even) {
+.stats_container .row:nth-child(even) {
     background-color: #EEEEEE;
 }
 
-#stats .container .row:first-child {
+.stats_container .row:first-child {
     border: solid black 1px;
 }
 
-#stats .container .row:first-child div {
+.stats_container .row:first-child div {
     background-color: #DDDDDD;
     font-size: 1.2em;
     font-weight: bolder;
@@ -31,7 +31,7 @@
     text-align: center;
 }
 
-#stats .container .row:nth-of-type(n+2):hover {
+.stats_container .row:nth-of-type(n+2):hover {
     background-color: #444444;
     cursor: pointer;
     color:#EEEEEE;
@@ -47,4 +47,14 @@
 
 .home, .away {
     display: none;
+}
+
+.teams div:hover {
+    background-color: #444444;
+    cursor: pointer;
+    color:#EEEEEE;
+}
+
+.team img {
+    height: 100px;
 }
