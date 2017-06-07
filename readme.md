@@ -2,6 +2,10 @@
 
 Projekt zaliczeniowy z przedmiotu "Programowanie aplikacji webowych SPA"
 
+**Czy Liga Angielska s³usznie jest uznawana za najbardziej wyrównan¹ ligê Europy?**
+**Czy Robert Lewandowski jest najlepszym strzelcem w Europie?**
+**Porównaj statystyki najmocniejszych lig œwiata i przekonaj siê sam!**
+
 ## 1. AUTORZY PROJEKTU
 
 studenci Uniwersytetu Ekonomicznego w Krakowie:
@@ -36,15 +40,15 @@ W Bootstrap interfejs pomyœlany jest jako siatka/tabelka (ang. grid). Na ka¿dym 
 ## 5. ELEMENTY PROJEKTU
 
 ```
-* \.idea
-* \css <- arkusz stylów
-* \fonts
-* \images <- zdjêcia, grafika
-* \js <- skrypty JavaScript
-* \less
-* \scss
-* index.html <- strona g³ówna
-* readme.txt <- plik readme, strona projektu
+\.idea
+\css <- arkusz stylów
+\fonts
+\images <- zdjêcia, grafika
+\js <- skrypty JavaScript
+\less
+\scss
+index.html <- strona g³ówna
+readme.md <- plik readme, strona projektu
 ```
 
 
