@@ -4,18 +4,20 @@
 var historyActions = historyActions;
 $(document).ready(function () {
     $("a[href=\"#statystyki\"]").on("click", function () {
+        $("#clearHistory").hide();
+        $("#actions").show();
+        $("#addFavourites").show();
         historyActions.addHistoryAction(
             new historyObject(
                 AFD.baseStatsUrl, Date.now(), 'Lista rozgrywek', 'stats'
             )
         );
-        AFD.getStatistics('stats', AFD.baseStatsUrl);
+        AFD.getStatistics('stats');
     });
 
     $(".navbar-brand").on("click", function () {
-        $("#stats, #actions").fadeOut(function(){
-            $("#main").fadeIn();
-        });
+        $("#stats, #actions, #history").hide();
+        $("#main").show();
     });
 
     $("#back").on("click", function () {
@@ -42,7 +44,8 @@ $(document).ready(function () {
     });
 
     $("a[href=\"#historia\"]").on("click", function () {
-        alert("Tutaj jest akcja wyświetlająca historię")
+        $("#stats, #actions, #main").hide();
+        historyActions.showHistory();
     });
 
     $("a[href=\"#ulubione\"]").on("click", function () {
