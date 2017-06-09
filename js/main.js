@@ -19,12 +19,14 @@ $(document).ready(function () {
     });
 
     $("#back").on("click", function () {
-        AFD.getStatistics(
-            historyActions.getBackAction().type
-        );
+        if (historyActions.backStep > 0) {
+            AFD.getStatistics(
+                historyActions.getBackAction().type
+            );
+        }
     });
 
-    $("#addFavourites").on("click", function(){
+    $("#addCompare").on("click", function(){
         AFDComparsion.addCompareObject(
             new compareObject(
                 historyActions.getLastAction().url,

@@ -4,7 +4,8 @@
 var historyActions = {
 
     history: Array(),
-    historyLimit: 10,
+    historyLimit: 20,
+    backStep: 1,
 
     addHistoryAction: function(historyObject) {
         var index = this.history.length;
@@ -12,6 +13,7 @@ var historyActions = {
         if (index == this.historyLimit) {
             this.removeLastHistoryAction();
         }
+        this.backStep = index;
     },
 
     removeLastHistoryAction: function(){
@@ -27,10 +29,16 @@ var historyActions = {
         return this.history[index-1];
     },
 
+    getPreLastAction: function() {
+        return this.history[this.backStep-1];
+    },
+
     getBackAction: function() {
-        var index = this.history.length;
-        if (index<2) return false;
-        this.history.pop();
-        return this.history[index-2];
+        var backStep = this.backStep;
+        this.addHistoryAction(
+            this.getPreLastAction()
+        );
+        this.backStep = backStep-1;
+        return this.history[this.backStep];
     }
 };

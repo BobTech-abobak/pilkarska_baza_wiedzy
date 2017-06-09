@@ -8,7 +8,6 @@ var AFD = {
     baseStatsUrl: "http://api.football-data.org/v1/competitions",
 
     getStatistics: function(name) {
-        console.log(name);
         switch (name) {
             case 'stats':
                 this.ajaxRequest('competitionsInfo', this.showCompetitionList);
@@ -282,7 +281,6 @@ var AFD = {
             content += '<div class="col-xs-1">vs.</div>';
             content += '<div class="col-xs-4">'+data.fixtures[item]['awayTeamName']+'</div>';
             content += '</div>';
-            console.log(data.fixtures[item])
         });
         content += '</div>';
         if (liveMatches.length>0) {
@@ -319,7 +317,8 @@ var AFD = {
                 new historyObject(
                     $(this).find('~ input').val(),
                     Date.now(),
-                    $(this).find('~ input').data('name')
+                    $(this).find('~ input').data('name'),
+                    'team'
                 )
             );
             AFD.getStatistics('team');
@@ -343,13 +342,25 @@ var AFD = {
         $("#stats").empty().append(content).show();
         $("#addCompare").show();
 
-        $("#fixtures, #players").on("click", function(){
+        $("#fixtures").on("click", function(){
             historyActions.addHistoryAction(
                 new historyObject(
                     $(this).data('url'),
                     Date.now(),
                     $(this).data('name'),
-                    ''
+                    'fixtures'
+                )
+            );
+            AFD.getStatistics($(this).attr('id'));
+        });
+
+        $("#players").on("click", function(){
+            historyActions.addHistoryAction(
+                new historyObject(
+                    $(this).data('url'),
+                    Date.now(),
+                    $(this).data('name'),
+                    'players'
                 )
             );
             AFD.getStatistics($(this).attr('id'));
