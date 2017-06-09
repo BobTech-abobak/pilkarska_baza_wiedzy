@@ -45,13 +45,13 @@
                     <a href="#statystyki">Statystyki</a>
                 </li>
                 <li>
-                    <a href="#">Porównywarka</a>
+                    <a href="#porownywarka">Porównywarka</a>
                 </li>
                 <li>
-                    <a href="#">Historia</a>
+                    <a href="#historia">Historia</a>
                 </li>
                 <li>
-                    <a href="#">Ulubione</a>
+                    <a href="#ulubione">Ulubione</a>
                 </li>
             </ul>
         </div>
@@ -66,58 +66,78 @@
         <div id="loader" class="col-xs-12 col-md-8 col-md-offset-2">
             <img src="images/loader.gif" />
         </div>
-        <div id="stats" class="col-lg-12"></div>
-        <div id="main" class="col-lg-12">
-                <h1>PIŁKARSKA BAZA WIEDZY</h1>
-            <p>
-                Czy Liga Angielska słusznie jest uznawana za najbardziej wyrównaną ligę Europy?<br/>
-                Czy Robert Lewandowski jest najlepszym strzelcem w Europie?<br/>
-                Porównaj statystyki najmocniejszych lig świata i przekonaj się sam!<br/>
-            </p>
-                Projekt zaliczeniowy z przedmiotu "Programowanie aplikacji webowych SPA"
-                <h2>1. AUTORZY PROJEKTU</h2>
-            studenci Uniwersytetu Ekonomicznego w Krakowie:<br>
-            <strong>Adrian Bobak</strong> - nr indeksu <strong>166190 </strong>- grupa KrZUIs4011Is<br>
-            <strong>Dariusz Banduła</strong> - nr indeksu <strong>147875 </strong>- grupa KrZUIs4011Is
-
-                <h2>2. OPIS APLIKACJI</h2>
-
-            Aplikacja stanowi bazę statystyk piłkarskich.<br>
-            Zawiera:<br>
-            - szczegółowe tabele rozgrywek (punkty, mecze, bramki z podziałem na mecze wyjazdowe i domowe)<br>
-            - szczegółowe dane dotyczące drużyn z uwzględnieniem danych dotyczących poszczególnych piłkarzy<br>
-            - możliwość zestawienia i porównania danych pomiędzy rozgrywkami/drużynami/piłkarzami<br>
-            - grupowanie danych z różnych rozgrywek/zespołów<br>
-            - wykorzystanie local storage do przechowywania informacji o historii akcji oraz możliwość zapisania do ulubionych poszczególnych statystyk, by móc śledzić je na bieżąco<br>
-            - w przypadku poszczególnych spotkań dwóch drużyn, statystyki wyników pomiędzy tymi drużynami z wybranego okresu czasu<br>
-            - wyszukiwarkę danych<br>
-            - komunikację z API poprzez żądania AJAX oraz format JSON<br>
-            - w przypadku meczów rozgrywanych na żywo, odpowiednią informację o tym<br>
-
-                <h2>3. WYKORZYSTANE API</h2>
-
-            Dokumentacja dostępna pod adresem:<br>
-            <a href="http://api.football-data.org/docs/v1">API Football Data Documentation</a>
-
-                <h2>4. WYKORZYSTANY FRAMEWORK CSS</h2>
-                
-            <a href="http://getbootstrap.com">Bootstrap</a><br>
-            Służy do tworzenia responsywnych interfejsów użytkownika, które łatwo jest dostosować do obsługi na urządzeniach mobilnych.
-            W Bootstrap interfejs pomyślany jest jako siatka/tabelka (ang. grid). Na każdym poziomie (tyczy się to zarówno całego ekranu przeglądarki jak i pojedynczego „div’a”) istnieje podział takiej jednostki na 12 kolumn. Za pomocą odpowiednich klas CSS możemy określać ile kolumn zawiera dany element w kontenerze. Elementy w kolumnach możemy też grupować horyzontalnie w wiersze.
-                <h2>5. ELEMENTY PROJEKTU</h2>
-
-            <strong>\.idea</strong><br/>
-            <strong>\css</strong> <- arkusz stylów<br/>
-            <strong>\fonts</strong><br/>
-            <strong>\images</strong> <- zdjęcia, grafika<br/>
-            <strong>\js</strong> <- skrypty JavaScript<br/>
-            <strong>\less</strong><br/>
-            <strong>\scss</strong><br/>
-            <strong>index.html</strong> <- strona główna<br/>
-            <strong>readme.md</strong> <- plik readme, strona projektu<br/>
-            <br/>
-            Dziękujemy i zapraszamy :)
+    </div>
+    <div id="actions" class="row">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-md-offset-2">
+            <button id="back" type="button" class="btn btn-default col-xs-10 col-xs-offset-1">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                &nbsp;Powrót
+            </button>
         </div>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+            <button id="addCompare" type="button" class="btn btn-info col-xs-10 col-xs-offset-1">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                &nbsp;Dodaj do porównania
+            </button>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+            <button id="addFavourites" type="button" class="btn btn-danger col-xs-10 col-xs-offset-1">
+                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                &nbsp;Dodaj do ulubionych
+            </button>
+        </div>
+    </div>
+    <div id="stats" class="row"></div>
+    <div id="main" class="row">
+            <h1>PIŁKARSKA BAZA WIEDZY</h1>
+        <p>
+            Czy Liga Angielska słusznie jest uznawana za najbardziej wyrównaną ligę Europy?<br/>
+            Czy Robert Lewandowski jest najlepszym strzelcem w Europie?<br/>
+            Porównaj statystyki najmocniejszych lig świata i przekonaj się sam!<br/>
+        </p>
+            Projekt zaliczeniowy z przedmiotu "Programowanie aplikacji webowych SPA"
+            <h2>1. AUTORZY PROJEKTU</h2>
+        studenci Uniwersytetu Ekonomicznego w Krakowie:<br>
+        <strong>Adrian Bobak</strong> - nr indeksu <strong>166190 </strong>- grupa KrZUIs4011Is<br>
+        <strong>Dariusz Banduła</strong> - nr indeksu <strong>147875 </strong>- grupa KrZUIs4011Is
+
+            <h2>2. OPIS APLIKACJI</h2>
+
+        Aplikacja stanowi bazę statystyk piłkarskich.<br>
+        Zawiera:<br>
+        - szczegółowe tabele rozgrywek (punkty, mecze, bramki z podziałem na mecze wyjazdowe i domowe)<br>
+        - szczegółowe dane dotyczące drużyn z uwzględnieniem danych dotyczących poszczególnych piłkarzy<br>
+        - możliwość zestawienia i porównania danych pomiędzy rozgrywkami/drużynami/piłkarzami<br>
+        - grupowanie danych z różnych rozgrywek/zespołów<br>
+        - wykorzystanie local storage do przechowywania informacji o historii akcji oraz możliwość zapisania do ulubionych poszczególnych statystyk, by móc śledzić je na bieżąco<br>
+        - w przypadku poszczególnych spotkań dwóch drużyn, statystyki wyników pomiędzy tymi drużynami z wybranego okresu czasu<br>
+        - wyszukiwarkę danych<br>
+        - komunikację z API poprzez żądania AJAX oraz format JSON<br>
+        - w przypadku meczów rozgrywanych na żywo, odpowiednią informację o tym<br>
+
+            <h2>3. WYKORZYSTANE API</h2>
+
+        Dokumentacja dostępna pod adresem:<br>
+        <a href="http://api.football-data.org/docs/v1">API Football Data Documentation</a>
+
+            <h2>4. WYKORZYSTANY FRAMEWORK CSS</h2>
+
+        <a href="http://getbootstrap.com">Bootstrap</a><br>
+        Służy do tworzenia responsywnych interfejsów użytkownika, które łatwo jest dostosować do obsługi na urządzeniach mobilnych.
+        W Bootstrap interfejs pomyślany jest jako siatka/tabelka (ang. grid). Na każdym poziomie (tyczy się to zarówno całego ekranu przeglądarki jak i pojedynczego „div’a”) istnieje podział takiej jednostki na 12 kolumn. Za pomocą odpowiednich klas CSS możemy określać ile kolumn zawiera dany element w kontenerze. Elementy w kolumnach możemy też grupować horyzontalnie w wiersze.
+            <h2>5. ELEMENTY PROJEKTU</h2>
+
+        <strong>\.idea</strong><br/>
+        <strong>\css</strong> <- arkusz stylów<br/>
+        <strong>\fonts</strong><br/>
+        <strong>\images</strong> <- zdjęcia, grafika<br/>
+        <strong>\js</strong> <- skrypty JavaScript<br/>
+        <strong>\less</strong><br/>
+        <strong>\scss</strong><br/>
+        <strong>index.html</strong> <- strona główna<br/>
+        <strong>readme.md</strong> <- plik readme, strona projektu<br/>
+        <br/>
+        Dziękujemy i zapraszamy :)
     </div>
 </div>
 <!-- /.container -->
@@ -129,9 +149,12 @@
 
 <!-- Other scripts -->
 <script src="js/bootstrap.min.js"></script>
+<script src="js/compareObject.js"></script>
 <script src="js/historyObject.js"></script>
 <script src="js/historyActions.js"></script>
+<script src="js/historyActions.js"></script>
 <script src="js/ApiFootballData.js"></script>
+<script src="js/ApiFootballDataComparsion.js"></script>
 <script src="js/main.js"></script>
 
 </body>

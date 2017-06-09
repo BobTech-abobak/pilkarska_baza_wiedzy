@@ -25,5 +25,12 @@ var historyActions = {
     getLastAction: function() {
         var index = this.history.length;
         return this.history[index-1];
+    },
+
+    getBackAction: function() {
+        var index = this.history.length;
+        if (index<2) return false;
+        this.history.pop();
+        return this.history[index-2];
     }
 };

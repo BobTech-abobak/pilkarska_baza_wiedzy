@@ -58,3 +58,11 @@
 .team img {
     height: 100px;
 }
+
+#actions {
+    display:none;
+}
+
+#actions div {
+    padding: 1%;
+}

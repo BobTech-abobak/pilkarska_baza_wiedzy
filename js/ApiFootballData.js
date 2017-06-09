@@ -8,6 +8,7 @@ var AFD = {
     baseStatsUrl: "http://api.football-data.org/v1/competitions",
 
     getStatistics: function(name) {
+        console.log(name);
         switch (name) {
             case 'stats':
                 this.ajaxRequest('competitionsInfo', this.showCompetitionList);
@@ -38,7 +39,13 @@ var AFD = {
     },
 
     ajaxRequest: function(name, callback) {
-        $("#loader ~ div").hide();
+        $("#loader").parent('.row').find("~ .row").hide();
+        $("#addCompare").hide();
+        if (historyActions.history.length < 2) {
+            $("#back").hide();
+        } else {
+            $("#back").show();
+        }
         $("#loader").show();
         $.ajax({
             url: historyActions.getLastAction().url,
@@ -48,6 +55,7 @@ var AFD = {
             success: function(data) {
                 callback(name, data);
                 $("#loader").hide();
+                $("#actions, #addFavourites").show();
             },
             error: function() {
                 console.log('Failed!');
@@ -78,13 +86,15 @@ var AFD = {
         content += '</div>';
 
         $("#stats").empty().append(content).show();
+        $("#addFavourites").show();
 
         $("#competitionsInfo .row:nth-child(n+2)").on('click', function(){
             historyActions.addHistoryAction(
                 new historyObject(
                     $(this).find('input').val(),
                     Date.now(),
-                    $(this).find('input').data('name')
+                    $(this).find('input').data('name'),
+                    'competitionsInfo'
                 )
             );
             AFD.getStatistics(name);
@@ -104,13 +114,39 @@ var AFD = {
         content += '<div class="row"><div id="teams" data-url="' + data._links.teams.href + '" data-name="'+ data.caption +' - Drużyny"><span class="glyphicon glyphicon-user hidden-xs" aria-hidden="true"></span> Drużyny</div></div>';
 
         $("#stats").empty().append(content).show();
+        $("#addCompare").show();
 
-        $("#competitions, #fixtures, #teams").on("click", function(){
+        $("#competitions").on("click", function(){
             historyActions.addHistoryAction(
                 new historyObject(
                     $(this).data('url'),
                     Date.now(),
-                    $(this).data('name')
+                    $(this).data('name'),
+                    'competitions'
+                )
+            );
+            AFD.getStatistics($(this).attr('id'));
+        });
+
+        $("#fixtures").on("click", function(){
+            historyActions.addHistoryAction(
+                new historyObject(
+                    $(this).data('url'),
+                    Date.now(),
+                    $(this).data('name'),
+                    'fixtures'
+                )
+            );
+            AFD.getStatistics($(this).attr('id'));
+        });
+
+        $("#teams").on("click", function(){
+            historyActions.addHistoryAction(
+                new historyObject(
+                    $(this).data('url'),
+                    Date.now(),
+                    $(this).data('name'),
+                    'teams'
                 )
             );
             AFD.getStatistics($(this).attr('id'));
@@ -153,6 +189,7 @@ var AFD = {
         content += '</div>';
 
         $("#stats").empty().append(content).show();
+        $("#addCompare").show();
 
         $("#btnTableFull").on("click", function(){
             $(this).removeClass('active');
@@ -177,7 +214,8 @@ var AFD = {
                 new historyObject(
                     $(this).find("input").val(),
                     Date.now(),
-                    $(this).find("input").data("")
+                    $(this).find("input").data("name"),
+                    'team'
                 )
             );
             AFD.getStatistics('team');
@@ -256,7 +294,8 @@ var AFD = {
                 new historyObject(
                     $(this).find("~input").val(),
                     Date.now(),
-                    $(this).find("~input").data("name")
+                    $(this).find("~input").data("name"),
+                    'team'
                 )
             );
             AFD.getStatistics("team");
@@ -302,13 +341,15 @@ var AFD = {
         content += '<div class="row"><div id="players" data-url="' + data._links.players.href + '" data-name="'+ data.name +' - Skład"><span class="glyphicon glyphicon-user hidden-xs" aria-hidden="true"></span> Skład</div></div>';
 
         $("#stats").empty().append(content).show();
+        $("#addCompare").show();
 
         $("#fixtures, #players").on("click", function(){
             historyActions.addHistoryAction(
                 new historyObject(
                     $(this).data('url'),
                     Date.now(),
-                    $(this).data('name')
+                    $(this).data('name'),
+                    ''
                 )
             );
             AFD.getStatistics($(this).attr('id'));
