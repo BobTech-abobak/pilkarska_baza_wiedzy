@@ -39,8 +39,7 @@ var AFD = {
 
     ajaxRequest: function(name, callback) {
         $("#loader").parent('.row').find("~ .row").hide();
-        $("#addCompare").hide();
-        $("#succesCompare").hide();
+        $("#addCompare, #succesCompare, #succesFavourites").hide();
         if (historyActions.history.length < 2) {
             $("#back").hide();
         } else {

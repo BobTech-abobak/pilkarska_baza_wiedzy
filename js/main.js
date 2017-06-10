@@ -40,17 +40,31 @@ $(document).ready(function () {
         $("#succesCompare").show();
     });
 
+
+    $("#addFavourites").on("click", function(){
+        historyFavourites.addFavouritesObject(
+            new compareObject(
+                historyActions.getLastAction().url,
+                historyActions.getLastAction().type,
+                historyActions.getLastAction().name
+            )
+        );
+        $("#addFavourites").hide();
+        $("#succesFavourites").show();
+    });
+
     $("a[href=\"#porownywarka\"]").on("click", function () {
-        $("#stats, #actions, #main, #history").hide();
+        $("#stats, #actions, #main, #history, #favourites").hide();
         AFDComparison.showComparisons();
     });
 
     $("a[href=\"#historia\"]").on("click", function () {
-        $("#stats, #actions, #main, #comparison").hide();
+        $("#stats, #actions, #main, #comparison, #favourites").hide();
         historyActions.showHistory();
     });
 
     $("a[href=\"#ulubione\"]").on("click", function () {
-        alert("Tutaj jest akcja wyświetlająca ulubione")
+        $("#stats, #actions, #main, #comparison, #history").hide();
+        historyFavourites.showHistory();
     });
 });

@@ -8,14 +8,14 @@ var AFDComparison = {
     addCompareObject: function(compareObject) {
         var index = this.getComparisonsAction().length;
         var found = false;
-        $.each(this.getComparisonsAction(), function (i, item) {
+        $.each(AFDComparison.getComparisonsAction(), function (i, item) {
             if (compareObject.name == item.name) {
                 found = true;
             }
         });
         if (!found) {
-            this.comparisons[index] = compareObject;
-            localStorage.setItem("comparisons", JSON.stringify(this.comparisons));
+            AFDComparison.comparisons[index] = compareObject;
+            localStorage.setItem("comparisons", JSON.stringify(AFDComparison.comparisons));
         }
     },
 
@@ -26,6 +26,9 @@ var AFDComparison = {
     },
 
     getComparisonsAction: function() {
+        if (localStorage.getItem("comparisons") == null) {
+            this.clearComparisons();
+        }
         return JSON.parse(localStorage.getItem("comparisons"));
     },
 
@@ -47,6 +50,10 @@ var AFDComparison = {
         content += '<div class="col-xs-12 col-sm-6">';
         content += '<select class="form-control" id="compareStat1">';
         $.each(this.getComparisonsAction(), function (i, item) {
+            if (item == null) {
+                AFDComparison.clearComparisons();
+                return false;
+            }
             content += '<option data-url="' + item.url + '" data-type="' + item.type + '">' + item.name + '</option>';
         });
         content += '</select>';
@@ -54,6 +61,10 @@ var AFDComparison = {
         content += '<div class="col-xs-12 col-sm-6">';
         content += '<select class="form-control" id="compareStat2">';
         $.each(this.getComparisonsAction(), function (i, item) {
+            if (item == null) {
+                AFDComparison.clearComparisons();
+                return false;
+            }
             content += '<option data-url="' + item.url + '" data-type="' + item.type + '">' + item.name + '</option>';
         });
         content += '</select>';
