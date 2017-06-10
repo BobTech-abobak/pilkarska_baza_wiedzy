@@ -50,7 +50,8 @@ var historyActions = {
         if (this.history.length == 0) {
             content += '<div class="row">';
             content += '<div class="col-xs-12">Brak danych w historii</div>';
-            content += '</div>'
+            content += '</div>';
+            content += '</div>';
             $("#history").empty().append(content).fadeIn();
             return false;
         }
@@ -71,10 +72,11 @@ var historyActions = {
             content += '<input type="hidden" value="' + item.url + '" data-type="'+item.type+'">';
             content += '</div>'
         });
-
+        content += '</div>';
         $("#history").empty().append(content).fadeIn();
 
         $("#history .row:nth-child(n+2)").on("click", function() {
+            $("#clearHistory").hide();
             historyActions.addHistoryAction(
                 new historyObject(
                     $(this).find("input").val(),

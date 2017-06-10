@@ -29,22 +29,24 @@ $(document).ready(function () {
     });
 
     $("#addCompare").on("click", function(){
-        AFDComparsion.addCompareObject(
+        AFDComparison.addCompareObject(
             new compareObject(
                 historyActions.getLastAction().url,
                 historyActions.getLastAction().type,
                 historyActions.getLastAction().name
             )
         );
+        $("#addCompare").hide();
+        $("#succesCompare").show();
     });
 
     $("a[href=\"#porownywarka\"]").on("click", function () {
-        console.log(AFDComparsion.getComparsions());
-        //AFDComparsion.getComparsion;
+        $("#stats, #actions, #main, #history").hide();
+        AFDComparison.showComparisons();
     });
 
     $("a[href=\"#historia\"]").on("click", function () {
-        $("#stats, #actions, #main").hide();
+        $("#stats, #actions, #main, #comparison").hide();
         historyActions.showHistory();
     });
 

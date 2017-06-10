@@ -40,6 +40,7 @@ var AFD = {
     ajaxRequest: function(name, callback) {
         $("#loader").parent('.row').find("~ .row").hide();
         $("#addCompare").hide();
+        $("#succesCompare").hide();
         if (historyActions.history.length < 2) {
             $("#back").hide();
         } else {
@@ -113,7 +114,6 @@ var AFD = {
         content += '<div class="row"><div id="teams" data-url="' + data._links.teams.href + '" data-name="'+ data.caption +' - Drużyny"><span class="glyphicon glyphicon-user hidden-xs" aria-hidden="true"></span> Drużyny</div></div>';
 
         $("#stats").empty().append(content).show();
-        $("#addCompare").show();
 
         $("#competitions").on("click", function(){
             historyActions.addHistoryAction(
@@ -340,7 +340,6 @@ var AFD = {
         content += '<div class="row"><div id="players" data-url="' + data._links.players.href + '" data-name="'+ data.name +' - Skład"><span class="glyphicon glyphicon-user hidden-xs" aria-hidden="true"></span> Skład</div></div>';
 
         $("#stats").empty().append(content).show();
-        $("#addCompare").show();
 
         $("#fixtures").on("click", function(){
             historyActions.addHistoryAction(
@@ -368,6 +367,7 @@ var AFD = {
     },
 
     showSquad: function(name, data) {
+        $("#addCompare").show();
         var content = '<div class="container col-md-6 col-md-offset-3 team stats_container">';
         content += '<div class="row">';
         content += '<div><h3>' + historyActions.getLastAction().name + '</h3></div>';

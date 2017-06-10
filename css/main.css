@@ -21,6 +21,7 @@
 
 .stats_container .row:first-child {
     border: solid black 1px;
+    background-color: #DDDDDD;
 }
 
 .stats_container .row:first-child div {
@@ -65,4 +66,13 @@
 
 #actions div {
     padding: 1%;
+}
+
+#succesCompare {
+    display: none;
+}
+
+#compare {
+    letter-spacing: 1.1em;
+    font-weight: bold;
 }

@@ -17,12 +17,8 @@ studenci Uniwersytetu Ekonomicznego w Krakowie:
 Aplikacja stanowi bazê statystyk pi³karskich.
 Zawiera:
 - szczegó³owe tabele rozgrywek (punkty, mecze, bramki z podzia³em na mecze wyjazdowe i domowe)
-- szczegó³owe dane dotycz¹ce dru¿yn z uwzglêdnieniem danych dotycz¹cych poszczególnych pi³karzy
-- mo¿liwoœæ zestawienia i porównania danych pomiêdzy rozgrywkami/dru¿ynami/pi³karzami
-- grupowanie danych z ró¿nych rozgrywek/zespo³ów
+- mo¿liwoœæ zestawienia i porównania danych pomiêdzy rozgrywkami/kadrami dru¿yn
 - wykorzystanie local storage do przechowywania informacji o historii akcji oraz mo¿liwoœæ zapisania do ulubionych poszczególnych statystyk, by móc œledziæ je na bie¿¹co
-- w przypadku poszczególnych spotkañ dwóch dru¿yn, statystyki wyników pomiêdzy tymi dru¿ynami z wybranego okresu czasu
-- wyszukiwarkê danych
 - komunikacjê z API poprzez ¿¹dania AJAX oraz format JSON
 - w przypadku meczów rozgrywanych na ¿ywo, odpowiedni¹ informacjê o tym
 
