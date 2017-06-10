@@ -35,7 +35,7 @@ W Bootstrap interfejs pomyœlany jest jako siatka/tabelka (ang. grid). Na ka¿dym 
 
 ## 5. ELEMENTY PROJEKTU
 
-struktura projektu:
+Repozytorium sk³ada siê z nastêpuj¹cych folderów i plików:
 
 ```
 \.idea
