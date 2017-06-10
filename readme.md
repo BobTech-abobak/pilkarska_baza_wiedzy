@@ -1,53 +1,53 @@
-# Pi³karska Baza Wiedzy
+# PiÅ‚karska Baza Wiedzy
 
 Projekt zaliczeniowy z przedmiotu "Programowanie aplikacji webowych SPA"
 
-* **Czy Liga Angielska s³usznie jest uznawana za najbardziej wyrównan¹ ligê Europy?**
+* **Czy Liga Angielska sÅ‚usznie jest uznawana za najbardziej wyrÃ³wnanÄ… ligÄ™ Europy?**
 * **Czy Robert Lewandowski jest najlepszym strzelcem w Europie?**
-* **Porównaj statystyki najmocniejszych lig œwiata i przekonaj siê sam!**
+* **PorÃ³wnaj statystyki najmocniejszych lig Å›wiata i przekonaj siÄ™ sam!**
 
 ## 1. AUTORZY PROJEKTU
 
 studenci Uniwersytetu Ekonomicznego w Krakowie:
 * **Adrian Bobak** - nr indeksu **166190** - grupa KrZUIs4011Is
-* **Dariusz Bandu³a** - nr indeksu **147875** - grupa KrZUIs4011Is
+* **Dariusz BanduÅ‚a** - nr indeksu **147875** - grupa KrZUIs4011Is
 
 ## 2. OPIS APLIKACJI
 
-Aplikacja stanowi bazê statystyk pi³karskich.
+Aplikacja stanowi bazÄ™ statystyk piÅ‚karskich.
 Zawiera:
-* szczegó³owe tabele rozgrywek (punkty, mecze, bramki z podzia³em na mecze wyjazdowe i domowe)
-* mo¿liwoœæ zestawienia i porównania danych pomiêdzy rozgrywkami/kadrami dru¿yn
-* wykorzystanie local storage do przechowywania informacji o historii akcji oraz mo¿liwoœæ zapisania do ulubionych poszczególnych statystyk, by móc œledziæ je na bie¿¹co
-* komunikacjê z API poprzez ¿¹dania AJAX oraz format JSON
-* w przypadku meczów rozgrywanych na ¿ywo, odpowiedni¹ informacjê o tym
+* szczegÃ³Å‚owe tabele rozgrywek (punkty, mecze, bramki z podziaÅ‚em na mecze wyjazdowe i domowe)
+* moÅ¼liwoÅ›Ä‡ zestawienia i porÃ³wnania danych pomiÄ™dzy rozgrywkami/kadrami druÅ¼yn
+* wykorzystanie local storage do przechowywania informacji o historii akcji oraz moÅ¼liwoÅ›Ä‡ zapisania do ulubionych poszczegÃ³lnych statystyk, by mÃ³c Å›ledziÄ‡ je na bieÅ¼Ä…co
+* komunikacjÄ™ z API poprzez Å¼Ä…dania AJAX oraz format JSON
+* w przypadku meczÃ³w rozgrywanych na Å¼ywo, odpowiedniÄ… informacjÄ™ o tym .
 
 ## 3. WYKORZYSTANE API
 
-Dokumentacja dostêpna pod adresem:
+Dokumentacja dostÄ™pna pod adresem:
 * [API Football Data Documentation](http://api.football-data.org/docs/v1)
 
 ## 4. WYKORZYSTANY FRAMEWORK CSS
 
 [Bootstrap](http://getbootstrap.com/)
-S³u¿y do tworzenia responsywnych interfejsów u¿ytkownika, które ³atwo jest dostosowaæ do obs³ugi na urz¹dzeniach mobilnych.
-W Bootstrap interfejs pomyœlany jest jako siatka/tabelka (ang. grid). Na ka¿dym poziomie (tyczy siê to zarówno ca³ego ekranu przegl¹darki jak i pojedynczego „div’a”) istnieje podzia³ takiej jednostki na 12 kolumn. Za pomoc¹ odpowiednich klas CSS mo¿emy okreœlaæ ile kolumn zawiera dany element w kontenerze. Elementy w kolumnach mo¿emy te¿ grupowaæ horyzontalnie w wiersze.
+SÅ‚uÅ¼y do tworzenia responsywnych interfejsÃ³w uÅ¼ytkownika, ktÃ³re Å‚atwo jest dostosowaÄ‡ do obsÅ‚ugi na urzÄ…dzeniach mobilnych.
+W Bootstrap interfejs pomyÅ›lany jest jako siatka/tabelka (ang. grid). Na kaÅ¼dym poziomie (tyczy siÄ™ to zarÃ³wno caÅ‚ego ekranu przeglÄ…darki jak i pojedynczego â€divâ€™aâ€) istnieje podziaÅ‚ takiej jednostki na 12 kolumn. Za pomocÄ… odpowiednich klas CSS moÅ¼emy okreÅ›laÄ‡ ile kolumn zawiera dany element w kontenerze. Elementy w kolumnach moÅ¼emy teÅ¼ grupowaÄ‡ horyzontalnie w wiersze.
 
 ## 5. ELEMENTY PROJEKTU
 
-Repozytorium sk³ada siê z nastêpuj¹cych folderów i plików:
+Repozytorium skÅ‚ada siÄ™ z nastÄ™pujÄ…cych folderÃ³w i plikÃ³w:
 
 ```
 \.idea
 ```
 
-zawiera informacje zwi¹zane z projektem, oraz ustawienia IDE
+zawiera informacje zwiÄ…zane z projektem, oraz ustawienia IDE
 
 ```
 \css
 ```
 
-jest to zewnêtrzny kaskadowy arkusz stylów
+jest to zewnÄ™trzny kaskadowy arkusz stylÃ³w
 
 ```
 \fonts
@@ -65,13 +65,13 @@ zawiera pliki graficzne
 \js
 ```
 
-folder z plikami skryptów javascript
+folder z plikami skryptÃ³w javascript
 
 ```
 \less
 ```
 
-odpowiada za wygl¹d szablonu (coœ jak css z dodatkowymi opcjami)
+odpowiada za wyglÄ…d szablonu (coÅ› jak css z dodatkowymi opcjami)
 
 ```
 \scss
@@ -83,7 +83,7 @@ folder z plikami scss
 index.html
 ```
 
-strona g³ówna
+strona gÅ‚Ã³wna
 
 ```
 readme.md
@@ -93,4 +93,4 @@ strona projektu (informacje)
 
 
 
-Dziêkujemy i zapraszamy !!! :)
+DziÄ™kujemy i zapraszamy !!! :)
